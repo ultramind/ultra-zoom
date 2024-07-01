@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import MobileNavBar from './MobileNavBar'
+import { SignedIn, UserButton } from '@clerk/nextjs'
 
 const NavBar = () => {
   return (
@@ -10,8 +11,11 @@ const NavBar = () => {
             <Image src="/icons/logo.svg" width={32} height={32} alt='ultra-Zoom' className='max-sm:size-10' />
             <p className='text-[20px] font-extrabold text-white max-sm:hidden'>Ultra-Zoom</p>
         </Link>
-        <div className='justify-between gap-5'>
+        <div className='flex justify-between gap-5 items-center'>
             {/* clerk account */}
+            <SignedIn>
+              <UserButton/>
+            </SignedIn>
             <MobileNavBar/>
         </div>
 
