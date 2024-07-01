@@ -24,9 +24,9 @@ const MobileNavBar = () => {
                 <Image src="/icons/hamburger.svg" width={36} height={36} alt="hamburger" />
             </SheetTrigger>
             <SheetContent side="left" className="border-none bg-dark-1">
-                <Link href='/' className='flex items-center gap-1'>
+                <Link href='/' className='flex items-center gap-2'>
                     <Image src="/icons/logo.svg" width={32} height={32} alt='ultra-Zoom' className='max-sm:size-10' />
-                    <p className='text-[26px] font-extrabold text-white'>Ultra-Zoom</p>
+                    <p className='text-[20px] font-extrabold text-white'>Ultra-Zoom</p>
                 </Link>
                 <div className="flex h-[cal(100vh-70px)] flex-col justify-between overflow-y-auto">
                     <SheetClose asChild>
@@ -35,7 +35,7 @@ const MobileNavBar = () => {
                                 const isActive = pathname === link.route;
                                 return (
                                     <SheetClose asChild key={link.route}>
-                                        <Link key={link.label} href={link.route} className={cn('flex gap-4 items-center p-4 rounded-lg justify-start', {'bg-blue-1':isActive})}>
+                                        <Link key={link.label} href={link.route} className={cn('flex gap-4 items-center p-4 rounded-lg justify-start', {'bg-rose-1':isActive})}>
                                         <Image src={link.imageUrl} alt={link.label} width={20} height={20} />
                                         <p className='font-semibold'>{link.label}</p>
                                     </Link>
